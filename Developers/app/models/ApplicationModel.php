@@ -21,5 +21,10 @@ class ApplicationModel extends Model{
         file_put_contents($jsonData, $jsonData);
     }
 
+    public function deleteTask(){
+      echo "Rama creada";
+
+    }
+
 }
 ?>
