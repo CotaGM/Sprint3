@@ -1,0 +1,14 @@
+[
+    {
+        "nombre": "Sprint3",
+        "descripcion": "Terminarlo ya!",
+        "status": "En proceso",
+        "deadLine": "29-05-2024"
+    },
+    {
+        "nombre": "Nacionalidad",
+        "descripcion": "Estudiar para el examen",
+        "status": "No empezado",
+        "deadLine": "30-06-2024"
+    }   
+]
