@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/fontawesome/css/all.css">
+    <title>Document</title>
+    <style>
+        .text-custom-zinc {
+            color: #3f3f46;
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .bg-custom-pink {
+            background-color: #fb7185;
+        }
+        .icon-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: red;
+            font-size: 20px; /* Tamaño del icono */
+        }
+        /* Estilo del botón de la esquina superior derecha */
+        .top-right-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            color: #3f3f46; /* Color del icono */
+            font-size: 40px; /* Tamaño del icono */
+        }
+    </style>
+</head>
+<body class="bg-[url('/IT_Academy/Sprint3/Developers/web/images/fondo.png')] bg-cover bg-center h-screen flex items-center justify-center relative"> <!-- Añadido "relative" -->
+    <div class="w-full max-w-4xl text-left space-y-4 relative"> <!-- Añadido "relative" -->
+        <!-- Título principal -->
+        <h2 class="text-6xl text-white font-medium mb-16 mt-0 text-shadow">
+            ToDo
+        </h2>
+        <h1 class="text-2xl text-custom-zinc font-bold mb-2 text-shadow">
+            Mi lista
+        </h1>
+        <!-- Botón en la esquina superior derecha -->
+        <a href="create.phtml" class="top-right-button">
+          <i class="fa-solid fa-circle-plus"></i>
+        </a>
+        <!-- Primer contenedor con espaciado adicional superior -->
+        <?php foreach ($this -> taskList as $task) { ?>
+    <div class="py-1 px-8 bg-white rounded-xl shadow-lg space-y-2 sm:py-1 sm:flex sm:items-center sm:justify-between sm:space-y-0 sm:space-x-6">
+        <div class="text-center sm:text-left w-full">
+        <h1 class="text-black font-semibold" style="font-size: 16px;">
+        <?php echo $task["nombre"]; ?>
+        </h1>
+        </div>
+        <button class="icon-button">
+          <i class="fa-regular fa-square-check"></i>
+        </button>
+    </div>
+        <?php
+         }
+        ?>
+
+    </div>
+</body>
+</html>
