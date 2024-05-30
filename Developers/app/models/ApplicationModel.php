@@ -33,9 +33,10 @@ class ApplicationModel {
 
     public function readTasks(){
 
-
     }
 
+
+    
     public function deleteTask(){
         // Implementar la lógica para eliminar una tarea
         echo "Tarea eliminada";
