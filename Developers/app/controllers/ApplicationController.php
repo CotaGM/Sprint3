@@ -36,14 +36,14 @@ class ApplicationController extends Controller {
         // devuelves a la vista   
     }
 
-    /*public function updateAction(){
+    public function updateAction(){
         $task = new ApplicationModel();
-
+         
         //llamada al modelo
-
+        $name = $_GET["nombre"]; 
 
         //devuelve a la vista
 
 
-    }*/
+    }
 }

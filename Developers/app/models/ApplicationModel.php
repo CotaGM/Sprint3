@@ -2,11 +2,14 @@
 class ApplicationModel {
     
     protected $tasks;
+    
 
 
-    public function __construct()
-    {
+
+    public function __construct(){
         $this->tasks = [];
+    
+       
     }
 
     public function getTasks(){
@@ -30,6 +33,21 @@ class ApplicationModel {
         $jsonData  = json_encode($this->tasks, JSON_PRETTY_PRINT);
         file_put_contents(__DIR__ . "/dataBase.json", $jsonData );
     }
+    
+    public function updateTasks($name){
+     foreach ($this->tasks as $task){
+        if ($task -> name  === $task["nombre"]){
+         $taskUpdate = $task;
+        
+        }
+    }
+       
+
+    
+    
+    }
+
+
 
     public function readTasks(){
 
