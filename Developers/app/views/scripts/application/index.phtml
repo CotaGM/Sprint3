@@ -36,8 +36,8 @@
         }
     </style>
 </head>
-<body class="bg-[url('/IT_Academy/Sprint3/Developers/web/images/fondo.png')] bg-cover bg-center h-screen flex items-center justify-center relative"> <!-- Añadido "relative" -->
-    <div class="w-full max-w-4xl text-left space-y-4 relative"> <!-- Añadido "relative" -->
+<body class="bg-[url('/IT_Academy/Sprint3/Developers/web/images/fondo.png')] bg-cover bg-center h-screen flex items-center justify-center relative"> <!-- fondo -->
+    <div class="w-full max-w-4xl text-left space-y-4 relative">
         <!-- Título principal -->
         <h2 class="text-6xl text-white font-medium mb-16 mt-0 text-shadow">
             ToDo
@@ -46,7 +46,7 @@
             Mi lista
         </h1>
         <!-- Botón en la esquina superior derecha -->
-        <a href="create.phtml" class="top-right-button">
+        <a href="create" class="top-right-button">
           <i class="fa-solid fa-circle-plus"></i>
         </a>
         <!-- Primer contenedor con espaciado adicional superior -->
@@ -54,10 +54,14 @@
     <div class="py-1 px-8 bg-white rounded-xl shadow-lg space-y-2 sm:py-1 sm:flex sm:items-center sm:justify-between sm:space-y-0 sm:space-x-6">
         <div class="text-center sm:text-left w-full">
         <h1 class="text-black font-semibold" style="font-size: 16px;">
-        <?php echo $task["nombre"]; ?>
+        <?php echo $task["nombre"]."<br>";
+         echo $task["vencimiento"];
+        
+        ?>
         </h1>
         </div>
         <button class="icon-button">
+            <!-- Agregar funcion de update--> 
           <i class="fa-regular fa-square-check"></i>
         </button>
     </div>

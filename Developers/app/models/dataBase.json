@@ -2,13 +2,19 @@
     {
         "nombre": "Sprint3",
         "descripcion": "Terminarlo ya!",
-        "status": "En proceso",
-        "deadLine": "29-05-2024"
+        "estado": "En proceso",
+        "vencimiento": "29-05-2024"
     },
     {
         "nombre": "Nacionalidad",
         "descripcion": "Estudiar para el examen",
-        "status": "No empezado",
-        "deadLine": "30-06-2024"
-    }   
+        "estado": "No empezado",
+        "vencimiento": "30-06-2024"
+    },
+    {
+        "nombre": "c",
+        "descripcion": "lkl",
+        "estado": "pendiente",
+        "vencimiento": "05\/01\/2024"
+    }
 ]
