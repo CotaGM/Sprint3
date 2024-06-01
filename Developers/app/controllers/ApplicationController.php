@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Base controller for the application.
  * Add general things in this controller.
@@ -13,37 +12,37 @@ class ApplicationController extends Controller {
         // devuelves a la vista
         $this -> view -> taskList = $taskList;
 	}
-
+    //CREATE
     public function createAction(){
         $task = new ApplicationModel();
         // recuperar datos del formulario
         if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-        $name = $_POST["nombre"];
-        $description = $_POST["descripcion"];
-        $state = $_POST["estado"];
-        $dueDate = $_POST["vencimiento"];
+            $nombre = $_POST["nombre"];
+            $descripcion= $_POST["descripcion"];
+            $estado = $_POST["estado"];
+            $vencimiento = $_POST["vencimiento"];
 
-        //ingresar dentro del array
-        $newTask = [
-            "nombre" => $name,
-            "descripcion" => $description,
-            "estado" => $state,
-            "vencimiento" => $dueDate
-        ];
-        //llamada a metodo de Model
-        $task->createTask($newTask);
-        }
-        // devuelves a la vista   
+            //ingresar dentro del array
+            $newTask = [
+                "nombre" => $nombre,
+                "descripcion" => $descripcion,
+                "estado" => $estado,
+                "vencimiento" => $vencimiento
+            ];
+            //llamada a metodo de Model
+            $task->createTask($newTask);
+        }  
     }
-
-    public function updateAction(){
+    //READ
+    public function readAction() {
         $task = new ApplicationModel();
-         
-        //llamada al modelo
-        $name = $_GET["nombre"]; 
+        $taskList = $task->getTasks();
+    
+        if (isset($_POST["nombre"])) {
+            $nombre = $_POST["nombre"];
+            $taskChosen = $task->readTask($nombre, $taskList);
+            $this->view->taskChosen = $taskChosen;
+    } 
+  }
+} 
 
-        //devuelve a la vista
-
-
-    }
-}

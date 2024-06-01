@@ -13,7 +13,7 @@ $routes = array(
 	'/test' => 'test#index',
 	'/' => 'application#index',
 	'/create' => 'application#create',
-	'/update' => 'application#update',
+	'/read' => 'application#read',
 	
 	
 );
