@@ -16,7 +16,7 @@ class ApplicationController extends Controller {
     public function createAction(){
         $task = new ApplicationModel();
         // recuperar datos del formulario
-        if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+        if ($_SERVER["REQUEST_METHOD"] === "POST"){
             $nombre = $_POST["nombre"];
             $descripcion= $_POST["descripcion"];
             $estado = $_POST["estado"];
@@ -42,7 +42,42 @@ class ApplicationController extends Controller {
             $nombre = $_POST["nombre"];
             $taskChosen = $task->readTask($nombre, $taskList);
             $this->view->taskChosen = $taskChosen;
-    } 
-  }
-} 
-
+        } 
+    }
+    //UPDATE
+    public function updateAction() {
+        $task = new ApplicationModel();
+        $taskList = $task->getTasks();
+    
+        if (isset($_POST["nombre"])) {
+            $nombre = $_POST["nombre"];
+            $taskChosen = $task->readTask($nombre, $taskList);
+            $this->view->taskChosen = $taskChosen;
+        } 
+        
+        // Obtener datos del formulario de actualización
+        if ($_SERVER["REQUEST_METHOD"] === "POST"){
+            $nombre = $_POST["nombre"];
+            $descripcion= $_POST["descripcion"];
+            $estado = $_POST["estado"];
+            $vencimiento = $_POST["vencimiento"];
+    
+            // Crear un array con los datos actualizados
+            $updatedTask = [
+                "nombre" => $nombre,
+                "descripcion" => $descripcion,
+                "estado" => $estado,
+                "vencimiento" => $vencimiento
+            ];
+            
+            // Intentar actualizar la tarea
+            $updated = $task->updateTask($nombre, $updatedTask);
+            
+            if ($updated) {
+                header ("Location:./"); // Redirigir a la página principal
+                exit();
+            }
+        }
+    }
+    
+}

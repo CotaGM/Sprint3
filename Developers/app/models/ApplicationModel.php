@@ -37,7 +37,27 @@ class ApplicationModel {
             }
         } 
     }
+    public function updateTask($nombre, $updatedTask) {
+        // Obtener la lista de tareas
+        $taskList = $this->getTasks();
+        
+        // Buscar la tarea con el nombre especificado
+        foreach ($taskList as $task) {
+            if ($task["nombre"] === $nombre) {
+                // Actualizar la tarea con los datos nuevos
+                $task = $updatedTask;
+                
+                // Convertir el array a formato JSON y guardar los datos en la base de datos
+                $jsonData  = json_encode($taskList, JSON_PRETTY_PRINT);
+                file_put_contents(__DIR__ . "/dataBase.json", $jsonData);
+                
+                return true; 
+            }
+        }
+        return false; 
+    }
     
+
     public function deleteTask(){
         // Implementar la lógica para eliminar una tarea
         echo "Tarea eliminada";

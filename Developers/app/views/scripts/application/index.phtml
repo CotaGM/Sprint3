@@ -6,31 +6,39 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/fontawesome/css/all.css">
     <title>Document</title>
+    <style>
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .nombre {
+            font-size: 16px; /* Tamaño de fuente para el nombre */
+            font-weight: bold; /* Negrita para el nombre */
+        }
+        .fecha {
+            font-size: 14px; /* Tamaño de fuente más pequeño para la fecha */
+            font-weight: normal; /* Peso normal para la fecha */
+            color: #888; /* Color más claro para la fecha */
+        }
+    </style>
 </head>
-<body class="bg-[url('fondo.png')] bg-cover bg-center h-screen flex items-center justify-center relative">
+<body class="bg-[url('images/fondo.png')] bg-cover bg-center h-screen flex items-center justify-center relative">
     <div class="w-full max-w-4xl text-left space-y-4 relative" style="font-size: 16px;">
-        <h2 class="text-6xl text-white font-medium mb-16 mt-0 text-shadow">
-            ToDo
-        </h2>
-        <h1 class="text-2xl text-custom-zinc font-bold mb-2 text-shadow">
-            Mi lista
-        </h1>
-        <a href="create" class="top-right-button" style="position: absolute; top: 20px; right: 20px; background-color: transparent; border: none; cursor: pointer; color: #3f3f46; font-size: 40px;"> <!-- Estilo del botón de la esquina superior derecha -->
+        <h2 class="text-6xl text-white font-medium mb-16 mt-0 text-shadow">ToDo</h2>
+        <h1 class="text-2xl text-custom-zinc font-bold mb-2 text-shadow">Mi lista</h1>
+        <a href="create" class="top-right-button" style="position: absolute; top: 20px; right: 20px; background-color: transparent; border: none; cursor: pointer; color: #3f3f46; font-size: 40px;">
             <i class="fa-solid fa-circle-plus"></i>
         </a>
         <?php foreach ($this->taskList as $task) { ?>
             <div class="py-1 px-8 bg-white rounded-xl shadow-lg space-y-2 sm:py-1 sm:flex sm:items-center sm:justify-between sm:space-y-0 sm:space-x-6">
                 <div class="text-center sm:text-left w-full" style="font-size: 16px;">
-                    <h1 class="text-black font-semibold" style="font-size: 16px;">
-                        <?php echo $task["nombre"]; ?><br>
-                        <?php echo $task["vencimiento"]; ?>
-                    </h1>
+                    <h1 class="nombre text-black font-semibold"><?php echo $task["nombre"]; ?></h1>
+                    <span class="fecha"><?php echo $task["vencimiento"]; ?></span>
                 </div>
                 <!-- Botón read -->
                 <form action="read" method="POST">
-                    <input type="hidden" name="nombre" value="<?php echo $task['nombre']; ?>">
-                    <button type="submit" class="icon-button" style="background: none; border: none; cursor: pointer; color: red; font-size: 20px;"> <!-- Estilo del botón de información -->
-                        <i class="fa-regular fa-info-circle"></i> 
+                    <input type="hidden" name="nombre" value="<?php echo $task["nombre"]; ?>">
+                    <button type="submit" class="icon-button" style="background: none; border: none; cursor: pointer; color: red; font-size: 20px;">
+                    <i class="fa-regular fa-square-check"></i>
                     </button>
                 </form>
             </div>
