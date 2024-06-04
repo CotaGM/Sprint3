@@ -1,11 +1,5 @@
 [
     {
-        "nombre": "Descansar",
-        "descripcion": "Dormir despu\u00e9s del Sprint3",
-        "estado": "pendiente",
-        "vencimiento": "06\/25\/2024"
-    },
-    {
         "nombre": "Ayuda!",
         "descripcion": "ccdcx",
         "estado": null,
@@ -16,5 +10,11 @@
         "descripcion": "Juves de cerves con los compis",
         "estado": "pendiente",
         "vencimiento": "06\/06\/2024"
+    },
+    {
+        "nombre": "Descansar",
+        "descripcion": "Quiero dormir mucho",
+        "estado": "pendiente",
+        "vencimiento": "06\/04\/2024"
     }
 ]

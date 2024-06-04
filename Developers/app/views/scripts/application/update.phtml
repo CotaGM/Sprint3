@@ -15,11 +15,10 @@
             <a href="./" class="top-left-button" style="top: 10px; left: 20px;">
                 <i class="fa-solid fa-arrow-left" style="position: absolute; top: 15px; font-size: 14px;"></i><span class="small-text text-shadow" style="position: absolute; top: 10px; margin-left: 5px; left: 30px;">Volver a las listas</span>
             </a>
-            <div class="w-full sm:col-span-2">
-                <form action="./" method="POST">
-                    <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre</label>
-                    <input type="text" name="nombre" id="nombre" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:border-2 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:focus:border-2" value="<?php echo $this->taskChosen["nombre"]; ?>" style="outline: none;">
-                </div>
+            <h2 class="mb-6 mt-4 text-xl font-bold text-gray-900 dark:text-white">
+                <?php echo $this->taskChosen["nombre"]; ?>
+            </h2>
+            <form action="update" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas cambiar esta tarea?');">
                 <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                     <div class="relative max-w-sm">
                         <label for="vencimiento" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Vencimiento</label>
@@ -33,10 +32,10 @@
                         <label for="descripcion" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Descripción</label>
                         <textarea name="descripcion" id="descripcion" rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white" style="outline: none;"><?php echo $this->taskChosen["descripcion"]; ?></textarea>
                     </div>
+                    <input type="hidden" name="nombre" value="<?php echo $this->taskChosen["nombre"]; ?>">
                 </div>
-                <!-- Icono de basurero -->
-                <button type="submit" name="update_task" class="text-white bg-red-400 hover:bg-red-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mt-4 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-red-500">Guardar</button>
-            </form>  
+                <button type="submit" class="text-white bg-red-400 hover:bg-red-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mt-4 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-red-500">Guardar</button>
+            </form>
         </div>
     </section>
 <?php } ?>

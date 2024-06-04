@@ -57,6 +57,7 @@ class ApplicationController extends Controller {
             $this->view->taskChosen = $taskChosen;
         }
 
+    
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $nombre = $_POST["nombre"] ?? null;
             $descripcion = $_POST["descripcion"] ?? null;
@@ -87,8 +88,9 @@ class ApplicationController extends Controller {
         }
     }
     
+
     // DELETE
-    /*public function deleteAction() {
+    public function deleteAction() {
         if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["nombre"])) {
             $nombre = $_POST["nombre"];
             $taskModel = new ApplicationModel();
@@ -99,5 +101,6 @@ class ApplicationController extends Controller {
                 exit();
             }
         }
-    }*/
+    }
 }
+
