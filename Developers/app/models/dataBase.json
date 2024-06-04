@@ -1,20 +1,20 @@
 [
     {
-        "nombre": "Sprint3",
-        "descripcion": "Terminarlo ya!",
-        "estado": "En proceso",
-        "vencimiento": "29-05-2024"
-    },
-    {
-        "nombre": "Nacionalidad",
-        "descripcion": "Estudiar para el examen",
-        "estado": "No empezado",
-        "vencimiento": "30-06-2024"
-    },
-    {
-        "nombre": "c",
-        "descripcion": "lkl",
+        "nombre": "Descansar",
+        "descripcion": "Dormir despu\u00e9s del Sprint3",
         "estado": "pendiente",
-        "vencimiento": "05\/01\/2024"
+        "vencimiento": "06\/25\/2024"
+    },
+    {
+        "nombre": "Ayuda!",
+        "descripcion": "ccdcx",
+        "estado": null,
+        "vencimiento": "05\/28\/2024"
+    },
+    {
+        "nombre": "Cerves",
+        "descripcion": "Juves de cerves con los compis",
+        "estado": "pendiente",
+        "vencimiento": "06\/06\/2024"
     }
 ]
