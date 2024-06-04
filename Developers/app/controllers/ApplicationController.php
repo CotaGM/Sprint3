@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * Base controller for the application.
+ * Add general things in this controller.
+ */
 class ApplicationController extends Controller {
 
     public function indexAction() {
@@ -6,101 +11,39 @@ class ApplicationController extends Controller {
         // buscar en el modelo los datos
         $taskList = $task->getTasks();
         // devuelves a la vista
-        $this->view->taskList = $taskList;
-    }
+        $this -> view -> taskList = $taskList;
+	}
 
-    // CREATE
-    public function createAction() {
+    public function createAction(){
         $task = new ApplicationModel();
         // recuperar datos del formulario
-        if ($_SERVER["REQUEST_METHOD"] === "POST") {
-            $nombre = $_POST["nombre"];
-            $descripcion = $_POST["descripcion"];
-            $estado = $_POST["estado"];
-            $vencimiento = $_POST["vencimiento"];
+        if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+        $name = $_POST["nombre"];
+        $description = $_POST["descripcion"];
+        $state = $_POST["estado"];
+        $dueDate = $_POST["vencimiento"];
 
-            // ingresar dentro del array
-            $newTask = [
-                "nombre" => $nombre,
-                "descripcion" => $descripcion,
-                "estado" => $estado,
-                "vencimiento" => $vencimiento
-            ];
-            // llamada a método de Model
-            $task->createTask($newTask);
-            //redirigir a la pagina index
-            header("Location: ./");
-            exit();
+        //ingresar dentro del array
+        $newTask = [
+            "nombre" => $name,
+            "descripcion" => $description,
+            "estado" => $state,
+            "vencimiento" => $dueDate
+        ];
+        //llamada a metodo de Model
+        $task->createTask($newTask);
         }
+        // devuelves a la vista   
     }
 
-    // READ
-    public function readAction() {
+    public function updateAction(){
         $task = new ApplicationModel();
-        $taskList = $task->getTasks();
+         
+        //llamada al modelo
+        $name = $_GET["nombre"]; 
 
-        if (isset($_POST["nombre"])) {
-            $nombre = $_POST["nombre"];
-            $taskChosen = $task->readTask($nombre, $taskList);
-            $this->view->taskChosen = $taskChosen;
-        }
-    }
+        //devuelve a la vista
 
-    // UPDATE
-    public function updateAction() {
-        $task = new ApplicationModel();
-        $taskList = $task->getTasks();
 
-        if (isset($_POST["nombre"])) {
-            $nombre = $_POST["nombre"];
-            $taskChosen = $task->readTask($nombre, $taskList);
-            $this->view->taskChosen = $taskChosen;
-        }
-
-    
-        if ($_SERVER["REQUEST_METHOD"] === "POST") {
-            $nombre = $_POST["nombre"] ?? null;
-            $descripcion = $_POST["descripcion"] ?? null;
-            $estado = $_POST["estado"] ?? null;
-            $vencimiento = $_POST["vencimiento"] ?? null;
-    
-            if ($nombre && $descripcion && $estado && $vencimiento) {
-                $updatedTask = [
-                    "nombre" => $nombre,
-                    "descripcion" => $descripcion,
-                    "estado" => $estado,
-                    "vencimiento" => $vencimiento
-                ];
-    
-                $updated = $task->updateTask($nombre, $updatedTask);
-    
-                if ($updated) {
-                    header("Location: ./");
-                    exit();
-                }
-            }
-        } else {
-            if (isset($_POST["nombre"])) {
-                $nombre = $_POST["nombre"];
-                $taskChosen = $task->readTask($nombre, $taskList);
-                $this->view->taskChosen = $taskChosen;
-            }
-        }
-    }
-    
-
-    // DELETE
-    public function deleteAction() {
-        if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["nombre"])) {
-            $nombre = $_POST["nombre"];
-            $taskModel = new ApplicationModel();
-            $deleted = $taskModel->deleteTask($nombre);
-
-            if ($deleted) {
-                header("Location: ./");
-                exit();
-            }
-        }
     }
 }
-

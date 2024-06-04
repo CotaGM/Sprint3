@@ -6,6 +6,7 @@
         "vencimiento": "05\/28\/2024"
     },
     {
+<<<<<<< HEAD
         "nombre": "Cerves",
         "descripcion": "Juves de cerves con los compis",
         "estado": "pendiente",
@@ -16,5 +17,17 @@
         "descripcion": "Quiero dormir mucho",
         "estado": "pendiente",
         "vencimiento": "06\/04\/2024"
+=======
+        "nombre": "Examen Nacionalidad",
+        "descripcion": "Estudiar para el examen",
+        "estado": "No empezado",
+        "vencimiento": "30-06-2024"
+    },
+    {
+        "nombre": "Descansar",
+        "descripcion": "Cuando termine el Sprint 3, dormir 20 horas",
+        "estado": "pendiente",
+        "vencimiento": "05-05-2024"
+>>>>>>> f39479b9e15db60e6d7ac109b22b0c1ce78b6b27
     }
 ]
