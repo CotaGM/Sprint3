@@ -1,11 +1,23 @@
 [
     {
-        "nombre": "Sprint3",
-        "descripcion": "Terminarlo ya!",
-        "estado": "En proceso",
-        "vencimiento": "29-05-2024"
+        "nombre": "Ayuda!",
+        "descripcion": "ccdcx",
+        "estado": null,
+        "vencimiento": "05\/28\/2024"
     },
     {
+<<<<<<< HEAD
+        "nombre": "Cerves",
+        "descripcion": "Juves de cerves con los compis",
+        "estado": "pendiente",
+        "vencimiento": "06\/06\/2024"
+    },
+    {
+        "nombre": "Descansar",
+        "descripcion": "Quiero dormir mucho",
+        "estado": "pendiente",
+        "vencimiento": "06\/04\/2024"
+=======
         "nombre": "Examen Nacionalidad",
         "descripcion": "Estudiar para el examen",
         "estado": "No empezado",
@@ -16,5 +28,6 @@
         "descripcion": "Cuando termine el Sprint 3, dormir 20 horas",
         "estado": "pendiente",
         "vencimiento": "05-05-2024"
+>>>>>>> f39479b9e15db60e6d7ac109b22b0c1ce78b6b27
     }
 ]
