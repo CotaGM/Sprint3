@@ -1,0 +1,32 @@
+[
+    {
+        "nombre": "Sprint 4",
+        "descripcion": "Empezar el Sprint 4",
+        "estado": "No empezado",
+        "vencimiento": "06\/18\/2024"
+    },
+    {
+        "nombre": "Descansar",
+        "descripcion": "Dormiiiiir",
+        "estado": "terminado",
+        "vencimiento": "06\/10\/2024"
+    },
+    {
+        "nombre": "Sprint 3",
+        "descripcion": "por fin!",
+        "estado": "terminado",
+        "vencimiento": "06\/17\/2024"
+    },
+    {
+        "nombre": "Cerves",
+        "descripcion": "Juves de cerves",
+        "estado": "pendiente",
+        "vencimiento": "06\/06\/2024"
+    },
+    {
+        "nombre": "Descansar",
+        "descripcion": "terminee el developeeeer",
+        "estado": "terminado",
+        "vencimiento": "06\/05\/2024"
+    }
+]

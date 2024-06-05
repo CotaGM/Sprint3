@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/fontawesome/css/all.css">
+    <title>ToDo</title>
+    <style>
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .nombre {
+            font-size: 16px; /* Tamaño de fuente para el nombre */
+            font-weight: bold; /* Negrita para el nombre */
+        }
+        .fecha {
+            font-size: 14px; /* Tamaño de fuente más pequeño para la fecha */
+            font-weight: normal; /* Peso normal para la fecha */
+            color: #888; /* Color más claro para la fecha */
+        }
+        .trash-icon {
+            color: red; /* Color para el icono de basurero */
+            cursor: pointer; /* Cambiar el cursor a mano cuando se pase sobre el icono */
+        }
+        /* Custom scrollbar styles */
+        .scrollable-container {
+            max-height: 80vh; /* scroll bar */
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(0,0,0,0.3) transparent; /* Show scrollbar with a color */
+        }
+        .scrollable-container::-webkit-scrollbar {
+            width: 8px; 
+            visibility: hidden;
+        }
+        .scrollable-container::-webkit-scrollbar-thumb {
+            background-color: rgba(0,0,0,0.3);
+            border-radius: 10px;
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body class="bg-[url('images/fondo.png')] bg-cover bg-center h-screen flex items-center justify-center relative">
+    <div class="w-full max-w-4xl text-left space-y-4 relative scrollable-container p-4" style="font-size: 16px;">
+        <h2 class="text-6xl text-white font-medium mb-16 mt-0 text-shadow">ToDo</h2>
+        <h1 class="text-2xl text-custom-zinc font-bold mb-2 text-shadow">Mis tareas</h1>
+        <a href="create" class="top-right-button" style="position: absolute; top: 20px; right: 20px; background-color: transparent; border: none; cursor: pointer; color: #3f3f46; font-size: 40px;">
+            <i class="fa-solid fa-circle-plus"></i>
+        </a>
+        <?php foreach ($this->taskList as $task) { ?>
+            <div class="py-1 px-8 bg-white rounded-xl shadow-lg space-y-2 sm:py-1 sm:flex sm:items-center sm:justify-between sm:space-y-0 sm:space-x-6">
+                <div class="text-center sm:text-left w-full" style="font-size: 16px;">
+                    <h1 class="nombre text-black font-semibold"><?php echo $task["nombre"]; ?></h1>
+                    <span class="fecha"><?php echo $task["vencimiento"]; ?></span>
+                </div>
+                <!-- Botón read -->
+                <form action="read" method="POST">
+                    <input type="hidden" name="nombre" value="<?php echo $task["nombre"]; ?>">
+                    <button type="submit" class="icon-button" style="background: none; border: none; cursor: pointer; color: red; font-size: 20px;"title="Ver">
+                    <i class="fa-regular fa-eye"></i>
+                    </button>
+                </form>
+                 <!-- Icono de update -->
+                <form action="update" method="POST">
+                    <input type="hidden" name="nombre" value="<?php echo $task["nombre"]; ?>">
+                    <button type="submit" class="icon-button" style="background: none; border: none; cursor: pointer; color: red; font-size: 20px;"title="Editar">
+                    <i class="fa-regular fa-square-check"></i>
+                    </button>
+                </form>
+                <!-- Icono de basurero -->
+                <form action="delete" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas borrar esta tarea?');">
+                    <input type="hidden" name="nombre" value="<?php echo $task["nombre"]; ?>">
+                    <button type="submit" class="icon-button" style="background: none; border: none; cursor: pointer; color: red; font-size: 20px;"title="Borrar">
+                        <i class="fa-regular fa-trash-alt trash-icon"></i>
+                    </button>
+                </form>
+            </div>
+        <?php } ?>
+    </div>
+</body>
+</html>
