@@ -22,5 +22,11 @@
         "descripcion": "Juves de cerves",
         "estado": "pendiente",
         "vencimiento": "06\/06\/2024"
+    },
+    {
+        "nombre": "Descansar",
+        "descripcion": "terminee el developeeeer",
+        "estado": "terminado",
+        "vencimiento": "06\/05\/2024"
     }
 ]

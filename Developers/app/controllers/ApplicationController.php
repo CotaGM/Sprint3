@@ -80,4 +80,17 @@ class ApplicationController extends Controller {
             }
         } 
     }
+
+   // DELETE
+    public function deleteAction() {
+    if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["nombre"])) {
+        $nombre = $_POST["nombre"];
+        $taskModel = new ApplicationModel();
+        $deleted = $taskModel->deleteTask($nombre);
+        if ($deleted) {
+            header("Location: ./");
+            exit();
+        }
+    }
+   }
 }
