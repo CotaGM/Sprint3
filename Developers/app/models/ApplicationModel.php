@@ -48,4 +48,18 @@ class ApplicationModel {
         }
         return false; 
     }
+
+    public function deleteTask($nombre) {
+        $taskList = $this->getTasks();
+        foreach ($taskList as $key => $task) {
+            if ($task["nombre"] === $nombre) {
+                unset($taskList[$key]);
+                $jsonData = json_encode(array_values($taskList), JSON_PRETTY_PRINT);
+                file_put_contents(__DIR__ . "/dataBase.json", $jsonData);
+                return true;
+            }
+        }
+        return false;
+    }
 }
+ 
