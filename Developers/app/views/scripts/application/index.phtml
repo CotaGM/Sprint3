@@ -13,7 +13,6 @@
         .nombre {
             font-size: 16px; /* Tamaño de fuente para el nombre */
             font-weight: bold; /* Negrita para el nombre */
-<<<<<<< HEAD
         }
         .fecha {
             font-size: 14px; /* Tamaño de fuente más pequeño para la fecha */
@@ -39,26 +38,13 @@
             background-color: rgba(0,0,0,0.3);
             border-radius: 10px;
             visibility: hidden;
-=======
-        }
-        .fecha {
-            font-size: 14px; /* Tamaño de fuente más pequeño para la fecha */
-            font-weight: normal; /* Peso normal para la fecha */
-            color: #888; /* Color más claro para la fecha */
->>>>>>> f39479b9e15db60e6d7ac109b22b0c1ce78b6b27
         }
     </style>
 </head>
 <body class="bg-[url('images/fondo.png')] bg-cover bg-center h-screen flex items-center justify-center relative">
-<<<<<<< HEAD
     <div class="w-full max-w-4xl text-left space-y-4 relative scrollable-container p-4" style="font-size: 16px;">
         <h2 class="text-6xl text-white font-medium mb-16 mt-0 text-shadow">ToDo</h2>
         <h1 class="text-2xl text-custom-zinc font-bold mb-2 text-shadow">Mis tareas</h1>
-=======
-    <div class="w-full max-w-4xl text-left space-y-4 relative" style="font-size: 16px;">
-        <h2 class="text-6xl text-white font-medium mb-16 mt-0 text-shadow">ToDo</h2>
-        <h1 class="text-2xl text-custom-zinc font-bold mb-2 text-shadow">Mi lista</h1>
->>>>>>> f39479b9e15db60e6d7ac109b22b0c1ce78b6b27
         <a href="create" class="top-right-button" style="position: absolute; top: 20px; right: 20px; background-color: transparent; border: none; cursor: pointer; color: #3f3f46; font-size: 40px;">
             <i class="fa-solid fa-circle-plus"></i>
         </a>
@@ -71,7 +57,6 @@
                 <!-- Botón read -->
                 <form action="read" method="POST">
                     <input type="hidden" name="nombre" value="<?php echo $task["nombre"]; ?>">
-<<<<<<< HEAD
                     <button type="submit" class="icon-button" style="background: none; border: none; cursor: pointer; color: red; font-size: 20px;"title="Ver">
                     <i class="fa-regular fa-eye"></i>
                     </button>
@@ -90,12 +75,6 @@
                         <i class="fa-regular fa-trash-alt trash-icon"></i>
                     </button>
                 </form>
-=======
-                    <button type="submit" class="icon-button" style="background: none; border: none; cursor: pointer; color: red; font-size: 20px;">
-                    <i class="fa-regular fa-square-check"></i>
-                    </button>
-                </form>
->>>>>>> f39479b9e15db60e6d7ac109b22b0c1ce78b6b27
             </div>
         <?php } ?>
     </div>
